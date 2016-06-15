@@ -24,7 +24,9 @@ public class Main {
         }
 
         String result = calculate(inputUrl);
-        System.out.println(result);
+        System.out.println("\n\nInput URL is : "+inputUrl+"\n");
+        System.out.println("Output is :");
+        System.out.println(result+"\n\n");
     }
 
     /**
