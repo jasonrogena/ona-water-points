@@ -19,11 +19,11 @@ mvn clean test
 To execute the project using the [default input URL](https://raw.githubusercontent.com/onaio/ona-tech/master/data/water_points.json), run:
 
 ```
-mvn clean exec:java
+mvn clean install exec:java
 ```
 
 You can also provide another URL with similarly structured data by running:
 
 ```
-mvn clean exec:java -Dexec.args="[the input URL]"
+mvn clean install exec:java -Dexec.args="[the input URL]"
 ```
