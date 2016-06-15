@@ -1,4 +1,4 @@
-package utils;
+package io.ona.jobschallenge.utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

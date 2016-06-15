@@ -1,4 +1,4 @@
-package beans;
+package io.ona.jobschallenge.beans;
 
 import org.junit.Test;
 

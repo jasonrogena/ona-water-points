@@ -10,7 +10,7 @@ buildNumber.properties
 .mvn/timing.properties
 
 # Intellij Meta Files
-.idea/*
+.idea
 
 #Vim
 *.sw*

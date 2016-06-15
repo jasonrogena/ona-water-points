@@ -1,4 +1,4 @@
-package beans;
+package io.ona.jobschallenge.beans;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

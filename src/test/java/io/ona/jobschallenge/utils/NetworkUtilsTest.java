@@ -1,11 +1,10 @@
-package utils;
+package io.ona.jobschallenge.utils;
 
 import static org.junit.Assert.*;
 
 import org.hamcrest.CoreMatchers;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.junit.Test;
 
 import java.io.IOException;

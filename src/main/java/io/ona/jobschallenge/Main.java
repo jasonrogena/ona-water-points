@@ -1,14 +1,16 @@
-import beans.Community;
+package io.ona.jobschallenge;
+
+import io.ona.jobschallenge.beans.Community;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import utils.NetworkUtils;
+import io.ona.jobschallenge.utils.NetworkUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Main entry class
+ * io.ona.jobschallenge.Main entry class
  *
  * @author Jason Rogena - jasonrogena@gmail.com
  * @since v1.0-SNAPSHOT (15/06/2016)
