@@ -1,7 +1,7 @@
 package utils;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class NetworkUtils {
      * @throws IOException
      * @throws JSONException
      */
-    public static JSONObject readJSONFromUrl(String url) throws IOException, JSONException {
+    public static JSONArray readJSONFromUrl(String url) throws IOException, JSONException {
         InputStream inputStream = new URL(url).openStream();
         try {
             BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
@@ -36,7 +36,7 @@ public class NetworkUtils {
                 stringBuilder.append((char) cp);
             }
             String jsonText = stringBuilder.toString();
-            JSONObject json = new JSONObject(jsonText);
+            JSONArray json = new JSONArray(jsonText);
             return json;
         } finally {
             inputStream.close();

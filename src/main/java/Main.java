@@ -1,3 +1,12 @@
+import beans.Community;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import utils.NetworkUtils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Main entry class
  *
@@ -13,6 +22,7 @@ public class Main {
         }
 
         String result = calculate(inputUrl);
+        System.out.println(result);
     }
 
     /**
@@ -24,7 +34,30 @@ public class Main {
      */
     private static String calculate(String inputUrl) {
         if(inputUrl != null) {
+            try {
+                JSONArray rawData = NetworkUtils.readJSONFromUrl(inputUrl);
+                ArrayList<Community> communities = Community.initCommunities(rawData);
 
+                Collections.sort(communities, Collections.reverseOrder());
+
+                JSONObject response = new JSONObject();
+                int totalFunctional = 0;
+                JSONObject commWaterPoints = new JSONObject();
+                JSONArray commRanking = new JSONArray();
+
+                for(Community currCommunity : communities) {
+                    totalFunctional = totalFunctional + currCommunity.getNoFunctionalWaterPoints();
+                    commWaterPoints.put(currCommunity.getName(), currCommunity.getNoWaterPoints());
+                    commRanking.put(currCommunity.getName());
+                }
+
+                response.put("number_functional", totalFunctional);
+                response.put("number_water_points", commWaterPoints);
+                response.put("community_ranking", commRanking);
+                return response.toString();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }

@@ -3,6 +3,7 @@ package utils;
 import static org.junit.Assert.*;
 
 import org.hamcrest.CoreMatchers;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
@@ -21,9 +22,9 @@ public class NetworkUtilsTest {
     @Test
     public void testReadJSONFromUrl() throws Exception {
         try {
-            assertThat(NetworkUtils.readJSONFromUrl(VALID_JSON_URL), CoreMatchers.instanceOf(JSONObject.class));
+            assertThat(NetworkUtils.readJSONFromUrl(VALID_JSON_URL), CoreMatchers.instanceOf(JSONArray.class));
         } catch (Exception e) {
-            assertTrue("Expected a JSONObject, got an Exception", false);
+            assertTrue("Expected a JSONArray, got an Exception", false);
         }
     }
 
